@@ -1,0 +1,132 @@
+.p-heading{
+	padding: 20px 20px;
+	font-weight: bold;
+}
+
+
+#gambar-asik{
+	width: 46px;
+	margin: 40px;
+} 
+
+#ngoang{
+	margin-bottom: 30px;
+	padding-top: 10px; 
+}
+
+#ngaing{
+	margin-bottom: 20px;
+}
+
+#asik{
+	border: 1px solid #c4c4c4;
+	border-radius: 3px;
+	background-color: #fafafa;
+	margin-bottom: 50px;
+}
+
+#content-1{
+	padding-top: 30px;
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+
+#paham{
+	border-top: 0.1px solid #c4c4c4;
+	margin-bottom: 20px;
+}
+
+h4{
+	font-weight: bold;
+}
+
+hr{
+	border: 0.1px solid #c4c4c4;
+}
+
+.occation{
+	font-weight: bold;
+}
+
+#right-content{
+	padding-top: 12px;
+}
+
+
+
+.modal-bodyy{
+	width: 834px;
+	height: auto;
+	background-color: #ffffff;
+	border: 1px solid #fff; 
+	position: relative;
+}
+
+.span-mod{
+	margin-bottom: 50px;
+}
+
+
+
+#textarea{
+	padding-top: 50px;
+}
+
+#file-title{
+	padding-top: 5px;
+}
+
+.title-left-mod{
+	color: #9e9e9e;
+}
+
+.bold-1 {
+	font-weight: bold;
+}
+
+/*
+.hr-mod{
+	padding-top: 10px;
+}*/
+
+#con-modal{
+/*	background-color: #fff;*/
+max-width: 834px;
+}
+
+.wrapper{
+	padding-top: 160px;
+	padding-left: 266px;
+}
+
+.notif{
+	width: 700px;
+}
+
+.ngani {
+	padding-left:50px;
+	color: #2979ff;
+}
+
+.nganu {
+	padding-right:50px;
+}
+
+.ngoang {
+	margin-top:10px;
+    overflow:hidden;
+}
+
+.ngoang select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 4px 16px 4px 4px;
+    border: none;
+    background: #62bdd7 url("../_assets/img/logo.png") no-repeat ;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    border-radius: 2px;
+    font-weight: bold;
+}
