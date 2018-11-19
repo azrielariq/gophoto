@@ -44,7 +44,7 @@ class Login extends CI_Controller {
 		if ($result->num_rows() == 1) {
 			$data = array(
 				'id'		=> $result->row('id_user'),
-				'nama'		=> $result->row('nama'),
+				'name'		=> $result->row('nama'),
 				'isLogin'	=> TRUE
 			);
 			$this->session->set_userdata($data);
@@ -56,8 +56,8 @@ class Login extends CI_Controller {
 
 	}
 
-	function aksi_register(){
-		$nama 		= $this->input->post('nama');
+	function action_register(){
+		$name 		= $this->input->post('name');
 		$username 	= $this->input->post('username');
 		$email		= $this->input->post('email');
 		$password 	= md5($this->input->post('password'));
@@ -68,9 +68,9 @@ class Login extends CI_Controller {
 		);
 		$result = $this->M_Login->get_where($where);
 		if($result->num_rows() == 1){
-			$pesan = '1';
+			$message = '1';
 		}else{
-			$pesan = '0';
+			$message = '0';
 		}
 
 		//cek apakah username sudah digunakan
@@ -79,20 +79,20 @@ class Login extends CI_Controller {
 		);
 		$result = $this->M_Login->get_where($where);
 		if($result->num_rows() == 1){
-			if($pesan == '1'){ //jika email sudah digunakan
-				$pesan = '3'; //jika email dan username sudah digunakan
+			if($message == '1'){ //jika email sudah digunakan
+				$message = '3'; //jika email dan username sudah digunakan
 			}else{ //jika email belum digunakan
-				$pesan = '2';
+				$message = '2';
 			}
 		}else{
-			if($pesan == '0'){
-				$pesan = '0';
+			if($message == '0'){
+				$message = '0';
 			}	
 		}
 
-		if($pesan == '0'){ //jika email dan username belum digunakan
+		if($message == '0'){ //jika email dan username belum digunakan
 			$data = array(
-				'nama'		=> $nama,
+				'name'		=> $name,
 				'username'	=> $username,
 				'email'		=> $email,
 				'password'	=> $password
@@ -119,17 +119,18 @@ class Login extends CI_Controller {
 			}
 		}
 
-		echo $pesan;
+		echo $message;
 
 	}
 
 	function logout(){
 		$data = array(
-			'nama'		=> "",
+			'id'		=> "",
+			'name'		=> "",
 			'isLogin'	=> FALSE
 		);
 		$this->session->set_userdata($data);
-		redirect(base_url().'Login');
+		redirect(base_url().'login');
 	}
 
 	// Add a new item

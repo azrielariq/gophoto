@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Nov 2018 pada 06.34
+-- Waktu pembuatan: 19 Nov 2018 pada 08.14
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.10
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
-  `nama` varchar(30) NOT NULL,
+  `name` varchar(30) NOT NULL,
   `username` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` text NOT NULL
@@ -40,7 +40,7 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id_user`, `nama`, `username`, `email`, `password`) VALUES
+INSERT INTO `users` (`id_user`, `name`, `username`, `email`, `password`) VALUES
 (15, 'Ananda Rifkiy Hasan', 'bukankalengkaleng', 'rifkiystark@avengers.com', 'adf8433f6a83858e2b6f6bb204845ff5');
 
 --
