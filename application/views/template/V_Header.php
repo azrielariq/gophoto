@@ -32,7 +32,6 @@
 					<li><a href="#" style="padding-top: 21px"><i class="fa fa-search fa-lg"></i></a></li>
 					<li><a href="#" style="padding-top: 21px"><i class="fa fa-bell fa-lg"></i></a></li>
 					<li><a href="#" style="padding-top: 21px"><i class="fa fa-envelope fa-lg"></i></a></li>
-					<li><a href="<?php echo base_url() ?>profile"><img src="<?php echo base_url() ?>_assets/img/avatar.jpg" class="img img-responsive img-circle" style="width: 28px; margin-left: 5px;" alt="profile"></a></li>
 					<li><a href="<?php echo base_url() ?>profile"><?php echo $this->session->userdata('user')['avatar'] ?></a></li>
 							
 				<?php else: ?>
