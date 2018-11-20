@@ -82,7 +82,7 @@
 					<li><a href="<?php echo base_url() ?>profile"><img src="<?php echo base_url('uploads/'.md5($this->session->userdata('id')).'/avatar.jpg') ?>" class="img img-responsive img-circle" style="width: 28px; height:28px;object-fit: cover;margin-left: 5px;" alt="profile"></a></li>
 					<?php else: ?>
 						<li><a href="<?php echo base_url() ?>login" style="padding-top: 23px;">Sign In</a></li>
-						<li><a href="<?php echo base_url() ?>login/register" style="padding-top: 23px;">Sign Up</a></li>
+						<li><a href="<?php echo base_url() ?>login" style="padding-top: 23px;">Sign Up</a></li>
 					<?php endif; ?>
 				</ul>
 			</div>
