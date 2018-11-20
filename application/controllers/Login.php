@@ -44,7 +44,7 @@ class Login extends CI_Controller {
 		if ($result->num_rows() == 1) {
 			$data = array(
 				'id'		=> $result->row('id_user'),
-				'name'		=> $result->row('nama'),
+				'name'		=> $result->row('name'),
 				'isLogin'	=> TRUE
 			);
 			$this->session->set_userdata($data);
