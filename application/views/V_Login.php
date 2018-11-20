@@ -41,7 +41,7 @@
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-sm-12 col-md-12">
-					<a href="<?php echo base_url() ?>home"><img src="<?php echo base_url() ?>_assets/img/logo.png" style="margin: 60px 0px 40px 0px; alt="logo"></a>
+					<a href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>_assets/img/logo.png" style="margin: 60px 0px 40px 0px; alt="logo"></a>
 				</div>
 			</div>
 			<div class="row">
@@ -126,10 +126,10 @@
 													<input class="form-control" type="password" name="password" value="" id="password-reg" placeholder="Password">
 												</div>
 												<div class="form-group">
-													<p style="font-size: 13px; color: #c4c4c4;"><input type="checkbox" name="accept" value="accept"> Dengan ini anda setuju dengan <b>kebijakan privasi</b> dan <b>peraturan</b> yang ada</p>
+													<p style="font-size: 13px; color: #c4c4c4;"><input type="checkbox" name="accept" id="accept" value="accept"> Dengan ini anda setuju dengan <b>kebijakan privasi</b> dan <b>peraturan</b> yang ada</p>
 												</div>
 												<div class="form-group" style="margin-top: 24px;">
-													<input type="button" name="register-submit" class="btn btn-info col-md-12" id="register-submit" style="padding: 10px 0; margin-bottom: 20px; background-color: #2979ff; color: #fff" value="Create Account" onclick="register();">
+													<input type="button" name="register-submit" class="btn btn-info col-md-12" id="register-submit" style="padding: 10px 0; margin-bottom: 20px; background-color: #2979ff; color: #fff" value="Create Account" onclick="register();" disabled="">
 												</div>
 										</div>
 									</div>
@@ -241,6 +241,16 @@ $(function() {
 			}
 		},
 	});
+}
+var accept = document.getElementById('accept');
+var submit = document.getElementById('register-submit');
+
+accept.onchange = function(){
+	if(this.checked){
+		submit.disabled = false;
+	}else{
+		submit.disabled = true;
+	}
 }
 </script>
 </html>

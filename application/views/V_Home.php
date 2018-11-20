@@ -21,56 +21,21 @@
 				<p style="text-align: center; font-size: 24px; margin: 50px 0px 40px;"><b>Fresh Photo</b></p>
 				<p style="text-align: center; color: #9e9e9e; margin-bottom: 40px;">Temukan foto-foto terbaru dengan tampilan segar dan epik sesuai dengan kategori yang tersedia dari<br>fotografer yang anda ikuti</p>
 				<div class="row">
-					<div class="col-sm-4 col-md-4">
-						<img src="<?php echo base_url() ?>_assets/img/home/fp1.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
+					<?php foreach ($fresh_snap as $fs) { ?>
+					<div class="col-sm-4 col-md-4" style="margin-bottom: 40px;">
+						<img src="<?php echo base_url('uploads/'.md5($fs->id_user).'/'.$fs->img) ?>" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;width:100%;height: 220px; object-fit: cover;">
 						<div class="col-sm-12 col-md-12" style="border: 1px solid #e0e0e0; background-color: #fafafa; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
-							<img src="<?php echo base_url() ?>_assets/img/avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
-							<p style="margin-top: 30px; font-size: 15px;">Dicky Indrayan</p>
+							<img src="<?php echo base_url('uploads/'.md5($fs->id_user).'/') ?>avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
+							<p style="margin-top: 30px; font-size: 15px;"><?php echo $fs->name ?></p>
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-4">
-						<img src="<?php echo base_url() ?>_assets/img/home/fp2.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
-						<div class="col-sm-12 col-md-12" style="border: 1px solid #e0e0e0; background-color: #fafafa; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
-							<img src="<?php echo base_url() ?>_assets/img/avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
-							<p style="margin-top: 30px; font-size: 15px;">Tiara Widya K</p>
-						</div>
-					</div>
-					<div class="col-sm-4 col-md-4">
-						<img src="<?php echo base_url() ?>_assets/img/home/fp3.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
-						<div class="col-sm-12 col-md-12" style="border: 1px solid #e0e0e0; background-color: #fafafa; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
-							<img src="<?php echo base_url() ?>_assets/img/avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
-							<p style="margin-top: 30px; font-size: 15px;">Dani Hanafi</p>
-						</div>
-					</div>
-				</div>
-				<div class="row" style="margin-top: 40px;">
-					<div class="col-sm-4 col-md-4">
-						<img src="<?php echo base_url() ?>_assets/img/home/fp4.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
-						<div class="col-sm-12 col-md-12" style="border: 1px solid #e0e0e0; background-color: #fafafa; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
-							<img src="<?php echo base_url() ?>_assets/img/avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
-							<p style="margin-top: 30px; font-size: 15px;">Azriel Ariq</p>
-						</div>
-					</div>
-					<div class="col-sm-4 col-md-4">
-						<img src="<?php echo base_url() ?>_assets/img/home/fp5.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
-						<div class="col-sm-12 col-md-12" style="border: 1px solid #e0e0e0; background-color: #fafafa; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
-							<img src="<?php echo base_url() ?>_assets/img/avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
-							<p style="margin-top: 30px; font-size: 15px;">Arvi Yusuf</p>
-						</div>
-					</div>
-					<div class="col-sm-4 col-md-4">
-						<img src="<?php echo base_url() ?>_assets/img/home/fp6.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
-						<div class="col-sm-12 col-md-12" style="border: 1px solid #e0e0e0; background-color: #fafafa; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
-							<img src="<?php echo base_url() ?>_assets/img/avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
-							<p style="margin-top: 30px; font-size: 15px;">Ananda Rifky</p>
-						</div>
-					</div>
+				<?php } ?>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div id="event" style="margin-top: 70px;">
+<div id="event" style="margin-top: 30px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-md-12">

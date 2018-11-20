@@ -51,7 +51,7 @@
     	init: function() {
     		this.on("success", function(file, responseText) {
       		// Jika file berhasil diupload
-      		//window.location = "facebook.com";
+      		window.location = "<?php echo base_url('home/detailupload') ?>";
   			});
     	},
     	acceptedFiles: 'image/*',
@@ -75,14 +75,14 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<?php if ( $this->session->userdata('isLogin') == TRUE ): ?>
-					<li><a href="#" class="btn btn-default" style="background-color: #2979ff; color: #ffffff; padding: 10px 15px; margin: 8px 30px 0 0;"  data-toggle="modal" data-target="#myModal"><i class="fa fa-upload"></i> Upload</a></li>
+					<li><a class="btn btn-default" style="background-color: #2979ff; color: #ffffff; padding: 10px 15px; margin: 8px 30px 0 0;" <?php if($this->session->userdata('isOnUploadSnap') == FALSE ) { ?>data-toggle="modal" data-target="#myModal" <?php }else{?> href="home/detailupload" <?php } ?>><i class="fa fa-upload"></i> Upload</a></li>
 					<li><a href="#" style="padding-top: 21px"><i class="fa fa-search fa-lg"></i></a></li>
 					<li><a href="#" style="padding-top: 21px"><i class="fa fa-bell fa-lg"></i></a></li>
 					<li><a href="#" style="padding-top: 21px"><i class="fa fa-envelope fa-lg"></i></a></li>
-					<li><a href="<?php echo base_url() ?>profile"><img src="<?php echo base_url('uploads/'.md5($this->session->userdata('id')).'/avatar.jpg') ?>" class="img img-responsive img-circle" style="width: 28px; height:28px; object-fit: cover;margin-left: 5px;" alt="profile"></a></li>
+					<li><a href="<?php echo base_url() ?>profile"><img src="<?php echo base_url('uploads/'.md5($this->session->userdata('id')).'/avatar.jpg') ?>" class="img img-responsive img-circle" style="width: 28px; height:28px;object-fit: cover;margin-left: 5px;" alt="profile"></a></li>
 					<?php else: ?>
 						<li><a href="<?php echo base_url() ?>login" style="padding-top: 23px;">Sign In</a></li>
-						<li><a href="<?php echo base_url() ?>login" style="padding-top: 23px;">Sign Up</a></li>
+						<li><a href="<?php echo base_url() ?>login/register" style="padding-top: 23px;">Sign Up</a></li>
 					<?php endif; ?>
 				</ul>
 			</div>

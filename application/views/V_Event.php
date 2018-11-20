@@ -12,12 +12,12 @@
 				<p style="text-align: center; color: #c4c4c4; font-size: 18px; margin: 20px 0 40px;">Home >> Event</p>
 				<!-- tab link -->
 				<div class="tab" style="text-align: center;">
-					<button class="tablinks" onclick="eventType(event, 'workshop')" style="background-color: inherit; overflow: hidden; border: none; outline: none; border-radius: 4px; color: #212121; padding: 15px 22px;">Workshop</button>
+					<button class="tablinks active" onclick="eventType(event, 'workshop')" style="background-color: inherit; overflow: hidden; border: none; outline: none; border-radius: 4px; color: #212121; padding: 15px 22px;">Workshop</button>
 					<button class="active" onclick="eventType(event, 'meetup')" style="background-color: inherit; overflow: hidden; border: none; outline: none; border-radius: 4px; color: #212121; padding: 15px 22px;">Meetup</button>
 					<button class="tablinks" onclick="eventType(event, 'kebudayaan')" style="background-color: inherit; overflow: hidden; border: none; outline: none; border-radius: 4px; color: #212121; padding: 15px 22px;">Kebudayaan</button>
 				</div>
 				<!-- tab content -->
-				<div id="workshop" class="tabcontent" style="margin-top: 40px;">
+				<div id="workshop" class="tabcontent" style="margin-top: 40px; display: block">
 					<div class="row">
 						<div class="col-sm-4 col-md-4">
 							<img src="<?php echo base_url() ?>_assets/img/event/1.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
@@ -113,7 +113,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="meetup" class="tabcontent" style="margin-top: 40px;">
+				<div id="meetup" class="tabcontent" style="margin-top: 40px;display: none">
 					<div class="row">
 						<div class="col-sm-4 col-md-4">
 							<img src="<?php echo base_url() ?>_assets/img/event/3.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
@@ -209,7 +209,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="kebudayaan" class="tabcontent" style="margin-top: 40px;">
+				<div id="kebudayaan" class="tabcontent" style="margin-top: 40px;display: none">
 					<div class="row">
 						<div class="col-sm-4 col-md-4">
 							<img src="<?php echo base_url() ?>_assets/img/event/2.jpg" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
