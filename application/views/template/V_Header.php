@@ -44,6 +44,14 @@
 	.dropzone{
 		height: 320px;
 	}
+
+	.snapdetail::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	.snapdetail::-webkit-scrollbar-thumb {
+		background-color: #C4C4C4;
+	}
 </style>
 <script>
     // Add restrictions
@@ -52,14 +60,14 @@
     		this.on("success", function(file, responseText) {
       		// Jika file berhasil diupload
       		window.location = "<?php echo base_url('home/detailupload') ?>";
-  			});
+      	});
     	},
     	acceptedFiles: 'image/*',
 	    maxFilesize: 10, // MB
 	    addRemoveLinks : true,
 	    dictDefaultMessage : 'Choose a file or drag it here <p> The image has to to </p>',
 	    dictResponseError : 'Gagal'
-  };
+	};
 </script>
 </head>
 <body>

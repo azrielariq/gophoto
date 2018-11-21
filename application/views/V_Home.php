@@ -1,18 +1,69 @@
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="isi">
+					<form action="<?php echo(base_url('Home/fileupload')) ?>" class="dropzone" id="fileupload">
+					</form> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="snap" class="modal fade" role="dialog">
+	<div class="modal-dialog" style="width: 90%; margin: 60px auto">
+		<!-- Modal content-->
+		<div class="modal-content" style="border-radius: 0px;">
+			<div class="modal-body" style="border-radius: 0px; padding: 0px">
 
-    <!-- Modal content-->
-    <div class="modal-content">
+				<img src="#" style="width: 65%;" id="imgdetailsnap">
 
-      <div class="modal-body">
-      	<div class="isi">
-        <form action="<?php echo(base_url('Home/fileupload')) ?>" class="dropzone" id="fileupload">
-        	</div>
-      </form> 
-      </div>
-    </div>
+				<div class="snapdetail" id="snapdetail" style="width: 35%;height:0px;float: right;padding: 50px;overflow-y: scroll;">
+					<div class="publishdate" style="color: #C4C4C4; font-size: 12px">Published : 20 Jaunari 2018</div>
+					<div class="profile" style="margin-top: 20px;">
+						<div class="contentprofile" style="width: 85%;float: left">
+							<div class="title-snap" style="font-size: 18px;font-weight: bold" id="title-snap">
+								Slamet Mountain
+							</div>
+							<div class="author" id="author" style="color: #212121; font-size: 12px">
+								@wakwaw
+							</div>
+						</div>
+						<div class="photoprofile" style="width: 15%;float: right;">
+							<img src="<?php echo base_url('uploads/'.md5($this->session->userdata('id')).'/avatar.jpg') ?>" class="contentphotoprofile img img-responsive img-circle" style="width: 37px; height:37px;object-fit: cover;margin-left: 5px;" alt="profile">
+						</div>
+					</div>
+					<button class="btn" style="background-color: #2979FF;color: white;width: 100%;height: 40px;margin-top: 20px;">Follow</button>
+					<div class="descriptionsnap" id="descriptionsnap" style="margin-top: 38px;color: #9E9E9E; font-size: 14px; line-height: 26px">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation .....</p>
+					</div>
+					<div class="tags" style="margin-top: 40px;">
+						<div class="row" id="list-tag" style="margin: -5px">
 
-  </div>
+						</div>
+					</div>
+					<div class="like-download" style="margin-top: 40px">
+						<div class="row" style="margin: -5px">
+							<div class="love" style="float: left; border: 1px solid #C4C4C4;border-radius: 4px; padding: 20px 20px; margin: 5px;">
+								<img src="<?php echo base_url();?>_assets/img/love.png" style="float: left">
+								<div class="love-sum" style="float: left">12</div>
+							</div>
+							<div class="download" style="float: left; border: 1px solid #C4C4C4;border-radius: 4px; padding: 20px 20px; margin: 5px;">
+								<img src="<?php echo base_url();?>_assets/img/download.png">
+							</div>
+						</div>
+					</div>
+					<div class="comment" style="font-size: 14px;font-weight: bold;margin-top: 40px">
+						Comments (20)
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 </div>
 <div id="fresh">
 	<div class="container">
@@ -22,14 +73,14 @@
 				<p style="text-align: center; color: #9e9e9e; margin-bottom: 40px;">Temukan foto-foto terbaru dengan tampilan segar dan epik sesuai dengan kategori yang tersedia dari<br>fotografer yang anda ikuti</p>
 				<div class="row">
 					<?php foreach ($fresh_snap as $fs) { ?>
-					<div class="col-sm-4 col-md-4" style="margin-bottom: 40px;">
-						<img src="<?php echo base_url('uploads/'.md5($fs->id_user).'/'.$fs->img) ?>" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;width:100%;height: 220px; object-fit: cover;">
-						<div class="col-sm-12 col-md-12" style="border: 1px solid #e0e0e0; background-color: #fafafa; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
-							<img src="<?php echo base_url('uploads/'.md5($fs->id_user).'/') ?>avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
-							<p style="margin-top: 30px; font-size: 15px;"><?php echo $fs->name ?></p>
+						<div class="col-sm-4 col-md-4" style="margin-bottom: 40px;" data-toggle="modal" data-target="#snap" onclick="showDetail('<?php echo $fs->img ?>');">
+							<img src="<?php echo base_url('uploads/'.md5($fs->id_user).'/'.$fs->img) ?>" class="img img-responsive" alt="thumbnail" style="border-top-left-radius: 4px; border-top-right-radius: 4px;width:100%;height: 220px; object-fit: cover;">
+							<div class="col-sm-12 col-md-12" style="border: 1px solid #e0e0e0; background-color: #fafafa; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
+								<img src="<?php echo base_url('uploads/'.md5($fs->id_user).'/') ?>avatar.jpg" class="img img-responsive img-circle" alt="avatar" style="width: 36px; float: left; margin: 22px 10px 22px 5px;">
+								<p style="margin-top: 30px; font-size: 15px;"><?php echo $fs->name ?></p>
+							</div>
 						</div>
-					</div>
-				<?php } ?>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -147,3 +198,4 @@
 		</div>
 	</div>
 </div>
+

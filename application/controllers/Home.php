@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		//Load Dependencies
-		$this->load->model(array('M_Snap'));
+		$this->load->model(array('M_Snap','M_Login'));
 		
 
 	}
@@ -66,7 +66,9 @@ class Home extends CI_Controller {
 	 			'dir'		=> $dir
 
 	 		);
+	 		$this->load->view('template/V_Header');
 	 		$this->load->view('V_DetailUpload',$data);
+	 		$this->load->view('template/V_Footer');
 	 	}
 	 }
 
@@ -99,6 +101,28 @@ class Home extends CI_Controller {
 	 	redirect(base_url());
 
 	 }
+	  function getDataSnap(){
+	 	header('Content-Type: application/json');
+	 	$imgname = $this->input->post('imgname');
+	 	$result = $this->M_Snap->get_where(array('img' => $imgname));
+	 	$dir = md5($result->row('id_user'));
+	 	$id_user = $result->row('id_user');
+	 	$author = $this->M_Login->get_where(array('id_user' => $id_user))->row('name');
+	 	$img = $result->row('img');
+	 	$title = $result->row('title');
+	 	$description = $result->row('description');
+	 	$tags = explode("#", $result->row('tags'));
+	 	$result = array(
+	 		'author'		=> $author,
+	 		'dir' 			=> $dir,
+	 		'img'			=> $img,
+	 		'title'			=> $title,
+	 		'description'	=> $description,
+	 		'tags'			=> $tags
+	 	);
+	 	echo json_encode($result);
+	 }
+
 
 	}
 

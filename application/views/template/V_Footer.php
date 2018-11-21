@@ -34,5 +34,47 @@
 	</div>
 
 </body>
+<script type="text/javascript">
+	function showDetail(imgname){
+		$.ajax({
+			url		: '<?php echo base_url()?>home/getDataSnap',
+		//mengirimkan username dan password ke script login.php
+		data	: 'imgname='+imgname, 
+		//Method pengiriman
+		type	: 'POST',
+		//Data yang akan diambil dari script pemroses
+		dataType: 'JSON',
+		//Respon jika data berhasil dikirim
+		success	: function(pesan){
+			var jumlah = pesan.length;
+			console.log(pesan.dir);
+			var img = document.getElementById('imgdetailsnap');
+			var description = document.getElementById('descriptionsnap');
+			img.setAttribute("src","uploads/"+pesan.dir+"/"+pesan.img);
+			description.innerHTML = '<p>'+pesan.description;
+			var tags = document.getElementById('list-tag');
+			var tagslength = pesan.tags.length;
+			tags.innerHTML = "";
+			for (var i = 1; i < tagslength;i++){
+				tags.innerHTML += '<div class="tag" style="background-color: #C4C4C4; color: white; font-size: 12px; padding:13px 20px 13px 20px; float: left; margin: 5px;border-radius: 4px">'+pesan.tags[i];
+			}
+			var author = document.getElementById('author');
+			author.innerHTML = '@'+pesan.author;
+			var title_snap = document.getElementById('title-snap');
+			title_snap.innerHTML = pesan.title;
+			
+		},
+	});
 
+		setTimeout(function() {
+			var img = document.getElementById('imgdetailsnap');
+            var detailsnapcontent = document.getElementById('snapdetail');
+			var height = img.clientHeight;
+			detailsnapcontent.style.height = height+"px";
+			console.log(height);
+        }, 1000)
+
+	}
+
+</script>
 </html>
