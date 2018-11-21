@@ -7,7 +7,7 @@ class Upload extends CI_Controller {
 	{
 		$this->load->view('template/V_Header');
 		$this->load->view('V_Upload');
-		$this->load->view('template/V_Header');
+		$this->load->view('template/V_Footer');
 	}
 
 }
